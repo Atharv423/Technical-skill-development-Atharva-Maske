@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class RecursiveFactorial {
+    
+    static long findFact(int num) {
+        if (num < 2)
+            return 1;
+        return num * findFact(num - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int n = input.nextInt();
+
+        if (n < 0) {
+            System.out.println("Factorial undefined for negatives.");
+        } else {
+            long result = findFact(n);
+            System.out.println("Factorial of " + n + " = " + result);
+        }
+
+        input.close();
+    }
+}
